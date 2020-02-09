@@ -2,8 +2,8 @@ from subprocess import Popen, PIPE
 from os import remove
 
 #constants
-XRES = 500
-YRES = 500
+XRES = 1100
+YRES = 650
 MAX_COLOR = 255
 RED = 0
 GREEN = 1
@@ -22,7 +22,8 @@ def new_screen( width = XRES, height = YRES ):
 
 def plot( screen, color, x, y ):
     # print("x{} y{}".format( x, y))
-    newy = YRES - 1 - y
+    newy =int( YRES - 1 - y)
+    x = int(x)
     if ( x >= 0 and x < XRES and newy >= 0 and newy < YRES ):
         screen[newy][x] = color[:]
 
